@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:orientation="horizontal"
+    android:background="@drawable/back"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--Shape for bluetooth-->
+    <ImageView
+        android:id="@id/bluetooth"
+        android:layout_width="130.0dip"
+        android:layout_height="130.0dip"
+        android:src="@drawable/shape" />
+
+    <!--Bluetooth icon-->
+    <ImageView
+        android:id="@id/ble"
+        android:layout_width="30.0dip"
+        android:layout_height="30.0dip"
+        android:layout_marginLeft="14.0dip"
+        android:layout_marginTop="14.0dip"
+        android:src="@drawable/bluetooth" />
+
+    <!--Connect text-->
+    <TextView
+        android:textSize="20.0sp"
+        android:id="@id/connect"
+        android:clickable="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="14.0dip"
+        android:layout_marginTop="30.0dip"
+        android:textColor="#ffffff"
+        android:text="Connect" />
+
+    <!--Logo-->
+    <ImageView
+        android:layout_gravity="center"
+        android:id="@id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="100.0dip"
+        android:src="@drawable/logo"
+        android:scaleType="centerInside"
+        android:layout_alignTop="@id/connect"
+        android:layout_centerHorizontal="true" />
+
+    <!--Footer-->
+    <LinearLayout
+        android:gravity="center"
+        android:id="@id/footer"
+        android:background="#40000000"
+        android:layout_width="fill_parent"
+        android:layout_height="65.0dip"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:weightSum="1">
+
+        <!-- ProgressBar -->
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:src="@drawable/battery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/imageView" />
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:progress="38"
+                android:paddingLeft="7dp"
+                android:paddingRight="11dp"
+                android:paddingTop="22dp"
+                android:paddingBottom="22dp"
+                android:layout_centerHorizontal="true"
+                style="@style/progressBar" />
+
+            <TextView
+                android:id="@+id/charge"
+                android:textSize="20dp"
+                android:textColor="#ffffff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="23%"
+                android:fontFamily="AvenirNext-Medium"
+                android:layout_centerVertical="true"
+                android:paddingRight="5dp"
+                android:layout_toStartOf="@+id/imageView" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <!--Circle seek bar-->
+    <proffart.org.yecup.SeekBar
+        android:layout_gravity="center"
+        android:id="@id/slider"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:background="@drawable/temp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <!--Layout for temperature and temp unit-->
+    <LinearLayout
+        android:id="@+id/temperature"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="250dp"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <!--Temperature for sending to Yecup-->
+        <TextView
+            android:textSize="45.0sp"
+            android:textStyle="normal"
+            android:textColor="#ffffffff"
+            android:id="@id/temp"
+            android:gravity="center"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:text="@string/tmep"
+            android:fontFamily="AvenirNext-Medium" />
+
+        <!--Temperature unit C or F (default celsius)-->
+        <TextView
+            android:id="@+id/celsius"
+            android:textStyle="normal"
+            android:textColor="#ffffffff"
+            android:textSize="45.0sp"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/celsius"
+            android:fontFamily="AvenirNext-Medium" />
+
+    </LinearLayout>
+
+    <!--Cup's current temperature-->
+    <TextView
+        android:textSize="20.0sp"
+        android:textColor="#ffffffff"
+        android:gravity="center_horizontal"
+        android:id="@id/currentTemp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/current_temp"
+        android:layout_below="@id/temperature"
+        android:fontFamily="AvenirNext-Medium"
+        android:layout_marginBottom="20dp" />
+
+
+</RelativeLayout>

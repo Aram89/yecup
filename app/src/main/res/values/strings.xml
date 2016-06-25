@@ -1,0 +1,7 @@
+<resources>
+    <string name="action_settings">Settings</string>
+    <string name="app_name">Yecup</string>
+    <string name="current_temp">Current: 20°C</string>
+    <string name="tmep">   42</string>
+    <string name="celsius"> °C</string>
+</resources>
